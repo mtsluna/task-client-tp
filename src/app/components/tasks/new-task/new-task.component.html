@@ -1,0 +1,39 @@
+<form [formGroup]="task">
+  <div class="mb-3 row">
+    <label for="task_title" class="col-sm-2 col-form-label">Titulo:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="task_title" formControlName="title" required [value]="task.get('title')?.value">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="due_date" class="col-sm-2 col-form-label">Fecha Programada:</label>
+    <div class="col-sm-10">
+      <input type="datetime-local" class="form-control" id="due_date" formControlName="due_date"
+             [value]="task.get('due_date')?.value | date: 'yyyy-MM-ddTHH:mm'">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="numeric_reference" class="col-sm-2 col-form-label">Observación numérica:</label>
+    <div class="col-sm-10">
+      <input digitOnly type="text" class="form-control" id="numeric_reference" formControlName="numeric_reference" [value]="task.get('numeric_reference')?.value">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="observation" class="col-sm-2 col-form-label">Obervations</label>
+    <div class="col-sm-10">
+      <textarea class="form-control no-resize" id="observation" rows="5" formControlName="observation"
+                [value]="task.get('observations')?.value"></textarea>
+    </div>
+  </div>
+  <hr>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" formControlName="calendar_event">
+    <label class="form-check-label" for="flexCheckChecked">
+      Crea evento en calendar
+    </label>
+  </div>
+</form>
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close class="btn-outline-danger">Cancel</button>
+  <button mat-raised-button class="btn-outline-primary" (click)="saveTask(task)" [disabled]="!task.valid">Guardar</button>
+</mat-dialog-actions>

@@ -1,0 +1,43 @@
+.home {
+  flex-direction: column;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 6px;
+  box-shadow: 2px 2px 15px gray;
+  padding: 20px 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  &__button {
+    display: flex;
+    background-color: lightgray;
+    width: 80%;
+  }
+}
+
+.center {
+  height: calc(100% - 56px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-around;
+  flex-wrap: wrap;
+}
+
+@media screen and (min-width: 760px) {
+  .center {
+    height: calc(100% - 64px);
+  }
+}

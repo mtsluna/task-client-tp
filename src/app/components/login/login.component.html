@@ -1,0 +1,26 @@
+<div class="mh-100 center">
+  <div class="home">
+    <h1 class="home__title" style="margin: 0 !important;">Inicie sesión</h1>
+    <div class="m-4" style="margin-bottom: 0 !important;">
+      <form #loginForm="ngForm" (ngSubmit)="loginUser()">
+      <div class="mb-3 row">
+        <label for="username" class="col-sm-2 col-form-label">Usuario:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="username" required name="username" [(ngModel)]="login.username">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="password" class="col-sm-2 col-form-label">Contraseñas:</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="password" required name="password" [(ngModel)]="login.password">
+        </div>
+      </div>
+      <div class="mb-3 row" style="margin-bottom: 0 !important;">
+        <div class="col-sm-10">
+          <button class="btn btn-outline-primary w-100" type="submit" [disabled]="loginForm.invalid">Ingresar</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
