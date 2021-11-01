@@ -1,3 +1,5 @@
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,6 +13,8 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import { DialogComponent } from './dialog/dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
+import { UserAdminComponent } from './user-admin/user-admin.component';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
@@ -18,7 +22,8 @@ import {MatButtonModule} from "@angular/material/button";
     NavbarComponent,
     DigitOnlyDirective,
     FilterComponent,
-    DialogComponent
+    DialogComponent,
+    UserAdminComponent
   ],
   exports: [
     NavbarComponent,
@@ -33,7 +38,10 @@ import {MatButtonModule} from "@angular/material/button";
     MatProgressSpinnerModule,
     MatExpansionModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }
