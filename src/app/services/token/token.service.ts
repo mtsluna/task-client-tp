@@ -9,7 +9,7 @@ import {Observable} from "rxjs";
 })
 export class TokenService {
 
-  BASE_URL = 'https://sandez.herokuapp.com/api/'
+  BASE_URL = 'http://localhost:8080/api/'
 
   constructor(private http: HttpClient) { }
 

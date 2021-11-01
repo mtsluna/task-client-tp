@@ -1,0 +1,17 @@
+<div class="container-custom">
+  <br>
+  <div style="text-align: center">
+    <h2 style="margin: 0">Estadísticas</h2>
+  </div>
+  <br>
+  <mat-card>
+    <mat-card-subtitle>Estados de tareas</mat-card-subtitle>
+    <p-chart type="polarArea" [data]="dataState" [options]="chartOptions" [style]="{'width': '40%'}"></p-chart>
+  </mat-card>
+  <br>
+  <mat-card>
+    <mat-card-subtitle>Tipos de tareas</mat-card-subtitle>
+    <p-chart type="polarArea" [data]="dataType" [options]="chartOptions" [style]="{'width': '40%'}"></p-chart>
+  </mat-card>
+  <br>
+</div>

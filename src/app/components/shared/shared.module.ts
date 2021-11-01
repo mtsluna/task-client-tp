@@ -11,6 +11,11 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import { DialogComponent } from './dialog/dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
+import {ReactiveFormsModule} from "@angular/forms";
+import { StatsComponent } from './stats/stats.component';
+import {PieChartModule} from "@swimlane/ngx-charts";
+import {ChartModule} from "primeng/chart";
+import {MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
@@ -18,7 +23,8 @@ import {MatButtonModule} from "@angular/material/button";
     NavbarComponent,
     DigitOnlyDirective,
     FilterComponent,
-    DialogComponent
+    DialogComponent,
+    StatsComponent
   ],
   exports: [
     NavbarComponent,
@@ -26,14 +32,18 @@ import {MatButtonModule} from "@angular/material/button";
     MatSpinner,
     FilterComponent
   ],
-  imports: [
-    CommonModule,
-    SharedRoutingModule,
-    MatToolbarModule,
-    MatProgressSpinnerModule,
-    MatExpansionModule,
-    MatDialogModule,
-    MatButtonModule
-  ]
+    imports: [
+        CommonModule,
+        SharedRoutingModule,
+        MatToolbarModule,
+        MatProgressSpinnerModule,
+        MatExpansionModule,
+        MatDialogModule,
+        MatButtonModule,
+        ReactiveFormsModule,
+        PieChartModule,
+        ChartModule,
+        MatCardModule
+    ]
 })
 export class SharedModule { }

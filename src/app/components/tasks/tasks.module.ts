@@ -14,6 +14,10 @@ import {SharedModule} from "../shared/shared.module";
 import {TaskRoutingModule} from "./task-routing.module";
 import {MatIconModule} from "@angular/material/icon";
 import {MatMenuModule} from "@angular/material/menu";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
+import {MatOptionModule} from "@angular/material/core";
 
 
 @NgModule({
@@ -35,7 +39,11 @@ import {MatMenuModule} from "@angular/material/menu";
     SharedModule,
     TaskRoutingModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatOptionModule
   ]
 })
 export class TasksModule {

@@ -25,6 +25,13 @@
                 [value]="task.get('observations')?.value"></textarea>
     </div>
   </div>
+  <div class="w-100">
+    <label for="observation" class="col-sm-2 col-form-label">Tipo de tarea:</label>
+    <select class="form-select" formControlName="type" aria-label="Seleccione un tipo de tarea">
+      <option selected>Seleccione un tipo de tarea</option>
+      <option *ngFor="let type of types">{{type}}</option>
+    </select>
+  </div>
   <hr>
   <div class="form-check">
     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" formControlName="calendar_event">

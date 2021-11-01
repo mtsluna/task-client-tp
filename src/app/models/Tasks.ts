@@ -7,6 +7,7 @@ export interface Task {
   due_date?: string,
   creation_date: string,
   numeric_reference?: number,
+  type: string;
   observation: string,
   id: string,
   user_id: string,

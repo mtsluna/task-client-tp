@@ -1,12 +1,26 @@
-<mat-expansion-panel>
-  <mat-expansion-panel-header>
-    <mat-panel-title>
-      Filtro
-    </mat-panel-title>
-    <mat-panel-description>
-      En construcción.
-    </mat-panel-description>
-  </mat-expansion-panel-header>
-  <p>Sección en construcción.</p>
-</mat-expansion-panel>
-
+<form [formGroup]="searchForm">
+  <mat-expansion-panel style="margin: 0; border-top-right-radius: 0; border-top-left-radius: 0">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Filtro
+      </mat-panel-title>
+      <mat-panel-description>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="mb-3 row">
+      <label for="task_title" class="col-sm-2 col-form-label">Titulo:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="task_title" formControlName="title" required>
+      </div>
+    </div>
+    <div class="w-100">
+      <label class="col-sm-2 col-form-label">Tipo de tarea:</label>
+      <select formControlName="type" class="form-select" aria-label="Seleccione un tipo de tarea">
+        <option selected>Todas</option>
+        <option *ngFor="let type of types">{{type}}</option>
+      </select>
+    </div>
+    <br>
+    <button mat-raised-button class="w-100 btn-outline-primary" (click)="search()">Buscar</button>
+  </mat-expansion-panel>
+</form>

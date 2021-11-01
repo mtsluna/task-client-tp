@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
-html, body { height: 100%; background-color: lightgray }
+html, body { height: 100%;
+  background: url("https://images.pexels.com/photos/1687093/pexels-photo-1687093.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500") no-repeat;
+  background-size: cover;
+}
 body { margin: 0; padding: 0; border: 0; outline: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .center-item {

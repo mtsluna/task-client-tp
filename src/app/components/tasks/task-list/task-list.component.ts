@@ -32,4 +32,11 @@ export class TaskListComponent implements OnInit {
     })
   }
 
+  receiveFilterEvent(event: any) {
+    this.taskService.getAll(this.type, event).subscribe( res => {
+      this.tasks = res;
+      this.loading = false;
+    })
+  }
+
 }

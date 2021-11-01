@@ -31,6 +31,13 @@
                   [value]="task.get('observation')?.value"></textarea>
       </div>
     </div>
+    <div class="w-100">
+      <label for="observation" class="col-sm-2 col-form-label">Tipo de tarea:</label>
+      <select class="form-select" formControlName="type" aria-label="Seleccione un tipo de tarea">
+        <option selected>Seleccione un tipo de tarea</option>
+        <option *ngFor="let type of types" [selected]="task.get('type')?.value == type">{{type}}</option>
+      </select>
+    </div>
   </form>
   <hr>
   <div class="d-flex justify-content-between">

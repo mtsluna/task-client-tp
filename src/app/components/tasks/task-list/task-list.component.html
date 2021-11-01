@@ -1,12 +1,14 @@
-<div class="center-item" *ngIf="loading">
-  <mat-spinner></mat-spinner>
-</div>
-<ng-container *ngIf="!loading">
-  <app-filter></app-filter>
-  <div *ngFor="let task of tasks">
-    <app-task (deletedTask)="getData()" [task]="task"></app-task>
+<div class="container-custom">
+  <div class="center-item" *ngIf="loading">
+    <mat-spinner></mat-spinner>
   </div>
-</ng-container>
+  <ng-container *ngIf="!loading">
+    <app-filter (filterEvent)="receiveFilterEvent($event)"></app-filter>
+    <div *ngFor="let task of tasks">
+      <app-task (deletedTask)="getData()" [task]="task"></app-task>
+    </div>
+  </ng-container>
+</div>
 
 
 

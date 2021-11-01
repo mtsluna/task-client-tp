@@ -14,6 +14,14 @@ import {formatDate} from "@angular/common";
 })
 export class NewTaskComponent implements OnInit {
 
+  types: string[] = [
+    'Finanzas',
+    'Administrativa',
+    'Personal',
+    'Comunicación',
+    'Otros'
+  ]
+
   task: FormGroup = this.fb.group({
     title: ['', [Validators.required]],
     due_date: [''],
@@ -22,6 +30,7 @@ export class NewTaskComponent implements OnInit {
     observation: [''],
     id: [''],
     user_id: [''],
+    type: [''],
     calendar_event: [false]
   });
 
