@@ -1,22 +1,24 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule} from '@angular/forms';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { SharedRoutingModule } from './shared-routing.module';
-import { NavbarComponent } from './navbar/navbar.component';
+import {SharedRoutingModule} from './shared-routing.module';
+import {NavbarComponent} from './navbar/navbar.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {DigitOnlyDirective} from "../../directives/digit-only.directive";
 import {MatProgressSpinnerModule, MatSpinner} from "@angular/material/progress-spinner";
-import { FilterComponent } from './filter/filter.component';
+import {FilterComponent} from './filter/filter.component';
 import {MatExpansionModule} from "@angular/material/expansion";
-import { DialogComponent } from './dialog/dialog.component';
+import {DialogComponent} from './dialog/dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
-import {ReactiveFormsModule} from "@angular/forms";
-import { StatsComponent } from './stats/stats.component';
+import {StatsComponent} from './stats/stats.component';
 import {PieChartModule} from "@swimlane/ngx-charts";
 import {ChartModule} from "primeng/chart";
 import {MatCardModule} from "@angular/material/card";
-
+import {UserAdminComponent} from './user-admin/user-admin.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import {MatCardModule} from "@angular/material/card";
     DigitOnlyDirective,
     FilterComponent,
     DialogComponent,
-    StatsComponent
+    StatsComponent,
+    UserAdminComponent
   ],
   exports: [
     NavbarComponent,
@@ -32,18 +35,22 @@ import {MatCardModule} from "@angular/material/card";
     MatSpinner,
     FilterComponent
   ],
-    imports: [
-        CommonModule,
-        SharedRoutingModule,
-        MatToolbarModule,
-        MatProgressSpinnerModule,
-        MatExpansionModule,
-        MatDialogModule,
-        MatButtonModule,
-        ReactiveFormsModule,
-        PieChartModule,
-        ChartModule,
-        MatCardModule
-    ]
+  imports: [
+    CommonModule,
+    SharedRoutingModule,
+    MatToolbarModule,
+    MatProgressSpinnerModule,
+    MatExpansionModule,
+    MatDialogModule,
+    MatButtonModule,
+    ReactiveFormsModule,
+    PieChartModule,
+    ChartModule,
+    MatCardModule,
+    MatTableModule,
+    FormsModule,
+  ]
 })
-export class SharedModule { }
+
+export class SharedModule {
+}

@@ -1,0 +1,67 @@
+<div class="action-button">
+  <button mat-raised-button (click)="openAddUserModal()">Añadir usuario</button>
+</div>
+<table mat-table [dataSource]="users" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Pos </th>
+    <td mat-cell *matCellDef="let element; let i = index"> {{i+1}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="username">
+    <th mat-header-cell *matHeaderCellDef> Nombre de usuario </th>
+    <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="created_at">
+    <th mat-header-cell *matHeaderCellDef> Fecha de creación </th>
+    <td mat-cell *matCellDef="let element"> {{element.created_at | date: 'MMM d, y'}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+<ng-template #addUser>
+  <h2 matDialogTitle style="text-align: center;">Añadir un nuevo usuario</h2>
+  <mat-dialog-content>
+    <form [formGroup]="userForm">
+      <div class="mb-3 row">
+        <label for="username" class="col-sm-2 col-form-label">Nombre de usuario</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="username" formControlName="username">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="name" class="col-sm-2 col-form-label">Nombre</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="name" formControlName="name">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="password" class="col-sm-2 col-form-label">Contraseña</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="password" formControlName="password">
+        </div>
+      </div>
+      <hr>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+      <button mat-raised-button matDialogClose="no">Cancelar</button>
+      <button mat-raised-button color="primary" matDialogClose="yes" (click)="registerNewUser(userForm.value)" [disabled]="userForm.invalid">Guardar</button>
+  </mat-dialog-actions>
+</ng-template>
