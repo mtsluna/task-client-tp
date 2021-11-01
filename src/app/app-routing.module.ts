@@ -8,7 +8,7 @@ import {TokenGuard} from "./guards/token.guard";
 const routes: Routes = [
   {path: 'task',loadChildren: () => import('./components/tasks/tasks.module').then(m => m.TasksModule), canLoad: [TokenGuard]},
   {path: '', component: HomeComponent, canActivate: [TokenGuard]},
-  {path: 'admin', component: UserAdminComponent},
+  {path: 'users/admin', component: UserAdminComponent},
   {path: 'login', component: LoginComponent}
 ];
 
