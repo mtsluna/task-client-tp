@@ -13,7 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class UserAdminComponent implements OnInit {
 
 
-  displayedColumns: string[] = ['id', 'username', 'name', 'created_at'];
+  displayedColumns: string[] = ['id','username', 'name', 'created_at'];
   users: any[] = []
   @ViewChild('addUser') userAddModal!: TemplateRef<any>;
   userForm!: FormGroup;
@@ -31,6 +31,7 @@ export class UserAdminComponent implements OnInit {
   getAllUsers() {
     this.userService.getAll().subscribe(async res => {
       this.users = await res;
+      console.log(this.users)
     }, err => {
       console.log(err)
     })
